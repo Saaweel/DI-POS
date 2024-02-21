@@ -1,0 +1,38 @@
+.tables-container, .tables-grid {
+    -fx-background-color: #333333;
+}
+
+.tables-grid {
+    -fx-padding: 10;
+}
+
+.tables-grid .table-button {
+    -fx-text-fill: white;
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+
+    -fx-max-width: Infinity;
+    -fx-max-height: Infinity;
+    -fx-min-width: 150;
+    -fx-min-height: 150;
+
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.tables-grid .table-button.table-occupied {
+    -fx-background-color: #e98784;
+}
+
+.tables-grid .table-button.table-available {
+    -fx-background-color: #a8e984;
+}
+
+.tables-grid .table-button:hover {
+    -fx-opacity: 0.8;
+}
+
+.tables-grid .table-button:pressed {
+    -fx-background-color: #555555;
+}

@@ -24,7 +24,9 @@ public class App extends Application {
 
         stage.setTitle("POS");
 
-        scene = new Scene(loadFXML("main"), 640, 480);
+        FXMLLoader fxmlLoader = loadFXML("main");
+
+        scene = new Scene(fxmlLoader.load(), 640, 480);
 
         stage.setScene(scene);
 
@@ -33,10 +35,8 @@ public class App extends Application {
         stage.show();
     }
 
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-
-        return fxmlLoader.load();
+    public static FXMLLoader loadFXML(String fxml) throws IOException {
+        return new FXMLLoader(App.class.getResource(fxml + ".fxml"));
     }
 
     public static void main(String[] args) {

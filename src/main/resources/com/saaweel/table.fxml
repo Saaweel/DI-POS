@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.5" prefHeight="640.0" prefWidth="480.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox maxHeight="1.7976931348623157E308">
+        <Label maxWidth="1.7976931348623157E308" text="Productos" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <GridPane>
+            <columnConstraints>
+              <ColumnConstraints hgrow="SOMETIMES" />
+              <ColumnConstraints hgrow="SOMETIMES" />
+              <ColumnConstraints hgrow="SOMETIMES" />
+              <ColumnConstraints hgrow="SOMETIMES" />
+            </columnConstraints>
+        </GridPane>
+    </VBox>
+    <VBox maxHeight="1.7976931348623157E308" maxWidth="350.0" prefWidth="250.0">
+        <Label maxWidth="1.7976931348623157E308" text="Factura Simplificada" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="products-container" VBox.vgrow="ALWAYS">
+
+        </ScrollPane>
+        <Label fx:id="totalText" maxWidth="1.7976931348623157E308" text="Total: 0 €" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+    </VBox>
+</SplitPane>
