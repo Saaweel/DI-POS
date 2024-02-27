@@ -92,6 +92,10 @@ public class MainController {
             stage.show();
 
             stage.setOnCloseRequest(event -> {
+                if (table.getProductCount() == 0) {
+                    table.setOccupied(false);
+                }
+
                 this.updateTableButton(table);
             });
         }

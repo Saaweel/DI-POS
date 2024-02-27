@@ -35,20 +35,6 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public void increaseQuantity() {
-        quantity++;
-    }
-
-    public void decreaseQuantity() {
-        if (quantity > 0) {
-            quantity--;
-        }
-    }
-
-    public void resetQuantity() {
-        quantity = 0;
-    }
-
     public float getTotal() {
         return price * quantity;
     }

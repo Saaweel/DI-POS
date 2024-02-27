@@ -3,6 +3,8 @@ package com.saaweel.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class Bill {
     private final ObservableList<Product> products;
 
@@ -43,6 +45,20 @@ public class Bill {
             }
         }
         return false;
+    }
+
+    public void decraseProductCount(String productName, int count) {
+        for (Product product : products) {
+            if (product.getName().equals(productName)) {
+                product.setQuantity(product.getQuantity() - count);
+                if (product.getQuantity() == 0) {
+                    products.remove(product);
+                } else {
+                    products.set(products.indexOf(product), product);
+                }
+                return;
+            }
+        }
     }
 
     public ObservableList<Product> getProducts() {

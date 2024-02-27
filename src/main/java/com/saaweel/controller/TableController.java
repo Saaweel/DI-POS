@@ -78,7 +78,7 @@ public class TableController {
         }
 
         tableBillListView.setItems(this.table.getBill().getProducts());
-        tableBillListView.setCellFactory(listView -> new ProductCellFactory());
+        tableBillListView.setCellFactory(listView -> new ProductCellFactory(this.table.getBill()));
         tableBillListView.setPlaceholder(new Label("No hay productos en la mesa"));
 
         this.table.getBill().getProducts().addListener((ListChangeListener<Product>) c -> totalText.setText("Total: " + table.getBilling() + " €"));
