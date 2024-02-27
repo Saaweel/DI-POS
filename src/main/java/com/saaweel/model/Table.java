@@ -21,8 +21,12 @@ public class Table {
         return number;
     }
 
-    public int getBilling() {
+    public float getBilling() {
         return bill.getTotal();
+    }
+
+    public Bill getBill() {
+        return bill;
     }
 
     public boolean isOccupied() {

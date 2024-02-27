@@ -3,6 +3,9 @@ Aplicación del POS de un bar como proyecto final del módulo Desarrollo de Inte
 
 # Changelog
 
+- ### Version 0.0.3 (27/02/2024)
+  - Listado de productos divididos en pesatañas por categorías
+  - Detalles de la cuenta de una mesa
 - ### Version 0.0.2 (21/02/2024)
   - Creación de la estructura de la aplicación (Paquetería)
   - Creación de la pantalla principal con las mesas

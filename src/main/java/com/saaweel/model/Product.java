@@ -5,10 +5,10 @@ import javafx.scene.image.Image;
 public class Product {
     private final String name;
     private final Image image;
-    private final int price;
+    private final float price;
     private int quantity;
 
-    public Product(String name, Image image, int price, int quantity) {
+    public Product(String name, Image image, float price, int quantity) {
         this.name = name;
         this.image = image;
         this.price = price;
@@ -23,7 +23,7 @@ public class Product {
         return image;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
@@ -49,7 +49,7 @@ public class Product {
         quantity = 0;
     }
 
-    public int getTotal() {
+    public float getTotal() {
         return price * quantity;
     }
 }

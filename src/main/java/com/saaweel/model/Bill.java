@@ -1,17 +1,17 @@
 package com.saaweel.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Bill {
-    private final List<Product> products;
+    private final ObservableList<Product> products;
 
     public Bill() {
-        this.products = new ArrayList<>();
+        this.products = FXCollections.observableArrayList();
     }
 
-    public int getTotal() {
-        int total = 0;
+    public float getTotal() {
+        float total = 0;
         for (Product product : products) {
             total += product.getTotal();
         }
@@ -32,5 +32,20 @@ public class Bill {
 
     public int getProductCount() {
         return products.size();
+    }
+
+    public boolean incraseProductCount(String productName, int count) {
+        for (Product product : products) {
+            if (product.getName().equals(productName)) {
+                product.setQuantity(product.getQuantity() + count);
+                products.set(products.indexOf(product), product);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public ObservableList<Product> getProducts() {
+        return products;
     }
 }
