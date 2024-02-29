@@ -18,7 +18,7 @@ public class ProductController {
 
     public void setData(Product item, Table table) {
         name.setText(item.getName());
-        description.setText(item.getQuantity() + " x " + item.getPrice() + " € = " + item.getTotal() + " €");
+        description.setText(item.getAmount() + " x " + item.getPrice() + " € = " + item.getTotal() + " €");
         productImage.setImage(item.getImage());
 
         this.product = item;

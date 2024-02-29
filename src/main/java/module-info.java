@@ -1,6 +1,8 @@
 module com.saaweel {
     requires javafx.controls;
     requires javafx.fxml;
+    requires jasperreports;
+    requires java.sql;
 
     opens com.saaweel to javafx.fxml;
     exports com.saaweel;

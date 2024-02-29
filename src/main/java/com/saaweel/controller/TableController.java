@@ -1,6 +1,7 @@
 package com.saaweel.controller;
 
 import com.saaweel.cell.ProductCellFactory;
+import com.saaweel.model.DataBase;
 import com.saaweel.model.Product;
 import com.saaweel.model.Table;
 import javafx.collections.ListChangeListener;
@@ -14,7 +15,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class TableController {
-    private final Table table;
+    private Table table;
     private final Stage stage;
     public TabPane productsPane;
     public ListView<Product> tableBillListView;
@@ -68,7 +69,7 @@ public class TableController {
 
             productButton.onMouseClickedProperty().set(event -> {
                 if (!this.table.incraseProductCount(product[0], 1)) {
-                    this.table.addProduct(new Product(product[0], productButton.getImage(), Float.parseFloat(product[1]), 1));
+                    this.table.addProduct(new Product(product[0], productButton.getImage(), Float.parseFloat(product[1]), 1, this.table.getId()));
                 }
             });
 
@@ -86,8 +87,10 @@ public class TableController {
         totalText.setText("Total: " + table.getBilling() + " €");
     }
 
-    public void cleanTable() {
+    public void clearTable() {
         this.table.getProducts().clear();
+
+        DataBase.clearTable(this.table.getId());
 
         stage.close();
         stage.getOnCloseRequest().handle(null);
@@ -97,6 +100,10 @@ public class TableController {
         this.printBill();
 
         this.table.getProducts().clear();
+
+        DataBase.setPayedTable(this.table.getId(), true);
+
+        this.table = new Table(this.table.getNumber());
 
         stage.close();
         stage.getOnCloseRequest().handle(null);

@@ -3,6 +3,9 @@ Aplicación del punto de venta (POS) de un bar como proyecto final del módulo D
 
 # Changelog
 
+- ### Version 0.0.6 (29/02/2024)
+  - Cambiado el nombre del atributo _quantity_ de la clase `Product` a _amount_ y sus respectivos métodos
+  - Persistencia de datos en base de datos MariaDB
 - ### Version 0.0.5 (29/02/2024)
   - Eliminada la clase `Bill` y movida su funcionalidad a la clase `Table`
   - Añadidos botones de _Limpiar_, _Pagada_ y _Factura_ en las mesas

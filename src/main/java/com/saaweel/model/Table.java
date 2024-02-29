@@ -3,6 +3,9 @@ package com.saaweel.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 public class Table {
     private int id;
     private final int number;
@@ -13,6 +16,26 @@ public class Table {
         this.number = number;
         this.products = FXCollections.observableArrayList();
         this.occupied = false;
+
+        try {
+            int id = DataBase.getTableByNumber(number);
+
+            if (id != -1) {
+                this.id = id;
+
+                ArrayList<Product> products = DataBase.getProductsByTableId(id);
+
+                this.products.addAll(products);
+
+                if (!this.products.isEmpty()) {
+                    this.occupied = true;
+                }
+            } else {
+                this.id = DataBase.createTable(number);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public int getNumber() {
@@ -42,7 +65,7 @@ public class Table {
     public boolean incraseProductCount(String productName, int count) {
         for (Product product : products) {
             if (product.getName().equals(productName)) {
-                product.setQuantity(product.getQuantity() + count);
+                product.setAmount(product.getAmount() + count);
                 products.set(products.indexOf(product), product);
                 return true;
             }
@@ -53,8 +76,8 @@ public class Table {
     public void decraseProductCount(String productName, int count) {
         for (Product product : products) {
             if (product.getName().equals(productName)) {
-                product.setQuantity(product.getQuantity() - count);
-                if (product.getQuantity() == 0) {
+                product.setAmount(product.getAmount() - count);
+                if (product.getAmount() == 0) {
                     products.remove(product);
                 } else {
                     products.set(products.indexOf(product), product);
