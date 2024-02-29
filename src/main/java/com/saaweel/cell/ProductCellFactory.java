@@ -1,17 +1,17 @@
 package com.saaweel.cell;
 
 import com.saaweel.controller.ProductController;
-import com.saaweel.model.Bill;
 import com.saaweel.model.Product;
+import com.saaweel.model.Table;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ListCell;
 
 public class ProductCellFactory extends ListCell<Product> {
-    Bill bill;
+    Table table;
 
-    public ProductCellFactory(Bill bill) {
-        this.bill = bill;
+    public ProductCellFactory(Table table) {
+        this.table = table;
     }
 
     @Override
@@ -23,7 +23,7 @@ public class ProductCellFactory extends ListCell<Product> {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/saaweel/product_list_cell.fxml"));
                 Parent root = loader.load();
                 ProductController controller = loader.getController();
-                controller.setData(item, this.bill);
+                controller.setData(item, this.table);
                 setText(null);
                 setGraphic(root);
                 setBackground(null);

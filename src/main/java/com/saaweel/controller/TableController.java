@@ -4,7 +4,6 @@ import com.saaweel.cell.ProductCellFactory;
 import com.saaweel.model.Product;
 import com.saaweel.model.Table;
 import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
@@ -12,18 +11,19 @@ import javafx.scene.control.TabPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-
-import java.util.concurrent.atomic.AtomicBoolean;
+import javafx.stage.Stage;
 
 public class TableController {
     private final Table table;
+    private final Stage stage;
     public TabPane productsPane;
     public ListView<Product> tableBillListView;
     public Label totalText;
 
 
-    public TableController(Table table) {
+    public TableController(Table table, Stage stage) {
         this.table = table;
+        this.stage = stage;
     }
 
     public void initialize() {
@@ -67,8 +67,8 @@ public class TableController {
             productButton.setFitHeight(100);
 
             productButton.onMouseClickedProperty().set(event -> {
-                if (!this.table.getBill().incraseProductCount(product[0], 1)) {
-                    this.table.getBill().addProduct(new Product(product[0], productButton.getImage(), Float.parseFloat(product[1]), 1));
+                if (!this.table.incraseProductCount(product[0], 1)) {
+                    this.table.addProduct(new Product(product[0], productButton.getImage(), Float.parseFloat(product[1]), 1));
                 }
             });
 
@@ -77,12 +77,32 @@ public class TableController {
             categoryTab.setContent(categoryGrid);
         }
 
-        tableBillListView.setItems(this.table.getBill().getProducts());
-        tableBillListView.setCellFactory(listView -> new ProductCellFactory(this.table.getBill()));
+        tableBillListView.setItems(this.table.getProducts());
+        tableBillListView.setCellFactory(listView -> new ProductCellFactory(this.table));
         tableBillListView.setPlaceholder(new Label("No hay productos en la mesa"));
 
-        this.table.getBill().getProducts().addListener((ListChangeListener<Product>) c -> totalText.setText("Total: " + table.getBilling() + " €"));
+        this.table.getProducts().addListener((ListChangeListener<Product>) c -> totalText.setText("Total: " + table.getBilling() + " €"));
 
         totalText.setText("Total: " + table.getBilling() + " €");
+    }
+
+    public void cleanTable() {
+        this.table.getProducts().clear();
+
+        stage.close();
+        stage.getOnCloseRequest().handle(null);
+    }
+
+    public void payBill() {
+        this.printBill();
+
+        this.table.getProducts().clear();
+
+        stage.close();
+        stage.getOnCloseRequest().handle(null);
+    }
+
+    public void printBill() {
+        System.out.println("Imprimiendo factura con id " + this.table.getId());
     }
 }

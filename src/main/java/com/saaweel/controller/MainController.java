@@ -85,7 +85,7 @@ public class MainController {
 
             FXMLLoader fxmlLoader = App.loadFXML("table");
 
-            fxmlLoader.setController(new TableController(table));
+            fxmlLoader.setController(new TableController(table, stage));
 
             stage.setScene(new Scene(fxmlLoader.load(), 1080, 720));
 
