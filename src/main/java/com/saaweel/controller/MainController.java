@@ -6,7 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,30 +16,26 @@ import java.util.List;
 import java.util.Objects;
 
 public class MainController {
-    public GridPane tablesGrid;
-    public List<Table> tables;
+    public AnchorPane root ;
+    private List<Table> tables;
 
     public void initialize() {
         this.tables = new ArrayList<>();
 
-        for (int i = 0; i < 25; i++) {
-            Table table = new Table(i);
+        for (int i = 0; i < 7; i++) {
+            Table table = new Table(i + 1);
             this.addTable(table);
         }
     }
 
     public void addTable(Table table) {
-        Label tableButton = new Label("Mesa " + table.getNumber() + "\n" + "Cuenta: " + table.getBilling() + " €");
+        Rectangle tableButton = (Rectangle) root.lookup("#table" + table.getNumber());
 
         if (table.isOccupied()) {
-            tableButton.getStyleClass().add("table-occupied");
+            tableButton.setStyle("-fx-fill: #e98784");
         } else {
-            tableButton.getStyleClass().add("table-available");
+            tableButton.setStyle("-fx-fill: #a8e984");
         }
-
-        tableButton.getStyleClass().add("table-button");
-
-        tableButton.setId("table-" + table.getNumber());
 
         tableButton.onMouseClickedProperty().set(event -> {
             try {
@@ -48,21 +45,28 @@ public class MainController {
             }
         });
 
-        tablesGrid.add(tableButton, tablesGrid.getChildren().size() % tablesGrid.getColumnCount(), tablesGrid.getChildren().size() / tablesGrid.getColumnCount());
+        Label tableLabel = (Label) root.lookup("#tableLabel" + table.getNumber());
+
+        if (tableLabel != null) {
+            tableLabel.setText("Mesa " + table.getNumber() + "\n" + "Cuenta: " + table.getBilling() + " €");
+        }
 
         tables.add(table);
     }
 
     public void updateTableButton(Table table) {
-        Label tableButton = (Label) tablesGrid.lookup("#table-" + table.getNumber());
-        tableButton.setText("Mesa " + table.getNumber() + "\n" + "Cuenta: " + table.getBilling() + " €");
+        Rectangle tableButton = (Rectangle) root.lookup("#table" + table.getNumber());
 
         if (table.isOccupied()) {
-            tableButton.getStyleClass().remove("table-available");
-            tableButton.getStyleClass().add("table-occupied");
+            tableButton.setStyle("-fx-fill: #e98784");
         } else {
-            tableButton.getStyleClass().remove("table-occupied");
-            tableButton.getStyleClass().add("table-available");
+            tableButton.setStyle("-fx-fill: #a8e984");
+        }
+
+        Label tableLabel = (Label) root.lookup("#tableLabel" + table.getNumber());
+
+        if (tableLabel != null) {
+            tableLabel.setText("Mesa " + table.getNumber() + "\n" + "Cuenta: " + table.getBilling() + " €");
         }
     }
 

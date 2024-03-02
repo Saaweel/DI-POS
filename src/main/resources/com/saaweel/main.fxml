@@ -1,16 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="480.0" prefWidth="640.0" styleClass="tables-container" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saaweel.controller.MainController">
-    <GridPane fx:id="tablesGrid" hgap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="tables-grid" vgap="5.0">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" />
-            <ColumnConstraints hgrow="SOMETIMES" />
-            <ColumnConstraints hgrow="SOMETIMES" />
-            <ColumnConstraints hgrow="SOMETIMES" />
-            <ColumnConstraints hgrow="SOMETIMES" />
-        </columnConstraints>
-    </GridPane>
-</ScrollPane>
+<HBox alignment="CENTER" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saaweel.controller.MainController">
+    <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-border-color: black;" HBox.hgrow="NEVER">
+      <ImageView fitHeight="500.0" fitWidth="800.0" mouseTransparent="true" pickOnBounds="true">
+         <image>
+            <Image url="@floor.jpg" />
+         </image>
+      </ImageView>
+        <Rectangle fx:id="table1" arcHeight="5.0" arcWidth="5.0" height="108.0" layoutX="120.0" layoutY="86.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="table-button" width="108.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="30.0" />
+        <Rectangle fx:id="table2" arcHeight="5.0" arcWidth="5.0" height="108.0" layoutX="120.0" layoutY="419.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="table-button" width="108.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="60.0" />
+        <Rectangle fx:id="table3" arcHeight="5.0" arcWidth="5.0" height="108.0" layoutX="273.0" layoutY="416.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="table-button" width="108.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="30.0" />
+        <Rectangle fx:id="table4" arcHeight="5.0" arcWidth="5.0" height="108.0" layoutX="273.0" layoutY="416.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="table-button" width="108.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="200.0" />
+        <Rectangle fx:id="table5" arcHeight="5.0" arcWidth="5.0" height="108.0" layoutX="361.0" layoutY="30.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="table-button" width="290.0" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="30.0" />
+        <Rectangle fx:id="table6" arcHeight="5.0" arcWidth="5.0" height="108.0" layoutX="360.0" layoutY="362.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="table-button" width="108.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="360.0" />
+        <Rectangle fx:id="table7" arcHeight="5.0" arcWidth="5.0" height="108.0" layoutX="542.0" layoutY="362.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="table-button" width="108.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="542.0" />
+        <Label fx:id="tableLabel1" alignment="CENTER" layoutX="61.0" layoutY="31.0" mouseTransparent="true" prefHeight="108.0" prefWidth="108.0" text="Label" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="30.0">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="tableLabel2" alignment="CENTER" layoutX="62.0" layoutY="361.0" mouseTransparent="true" prefHeight="108.0" prefWidth="108.0" text="Label" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="60.0">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="tableLabel3" alignment="CENTER" layoutX="201.0" layoutY="31.0" mouseTransparent="true" prefHeight="108.0" prefWidth="108.0" text="Label" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="30.0">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="tableLabel4" alignment="CENTER" layoutX="201.0" layoutY="361.0" mouseTransparent="true" prefHeight="108.0" prefWidth="108.0" text="Label" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="200.0">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="tableLabel5" alignment="CENTER" layoutX="363.0" layoutY="33.0" mouseTransparent="true" prefHeight="108.0" prefWidth="290.0" text="Label" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="30.0">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="tableLabel6" alignment="CENTER" layoutX="361.0" layoutY="360.0" mouseTransparent="true" prefHeight="108.0" prefWidth="108.0" text="Label" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="360.0">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="tableLabel7" alignment="CENTER" layoutX="543.0" layoutY="361.0" mouseTransparent="true" prefHeight="108.0" prefWidth="108.0" text="Label" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="542.0">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+    </AnchorPane>
+</HBox>

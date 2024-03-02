@@ -1,12 +1,4 @@
-.tables-container, .tables-grid {
-    -fx-background-color: #333333;
-}
-
-.tables-grid {
-    -fx-padding: 10;
-}
-
-.tables-grid .table-button {
+.table-button {
     -fx-text-fill: white;
     -fx-font-size: 1.5em;
     -fx-font-weight: bold;
@@ -21,18 +13,6 @@
     -fx-border-radius: 5;
 }
 
-.tables-grid .table-button.table-occupied {
-    -fx-background-color: #e98784;
-}
-
-.tables-grid .table-button.table-available {
-    -fx-background-color: #a8e984;
-}
-
-.tables-grid .table-button:hover {
+.table-button:hover {
     -fx-opacity: 0.8;
-}
-
-.tables-grid .table-button:pressed {
-    -fx-background-color: #555555;
 }
