@@ -3,7 +3,9 @@ Aplicación del punto de venta (POS) de un bar como proyecto final del módulo D
 
 # Changelog
 
-- ### Version 0.0.7 (01/03/2024)
+- ### Version 0.0.8 (02/03/2024)
+  - Refront completo
+- ### Version 0.0.7 (02/03/2024)
   - Cambiada la distribución de las mesas para que simulen el plano de un bar
 - ### Version 0.0.6 (29/02/2024)
   - Cambiado el nombre del atributo _quantity_ de la clase `Product` a _amount_ y sus respectivos métodos

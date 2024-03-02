@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<SplitPane dividerPositions="0.5" prefHeight="640.0" prefWidth="480.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.5" prefHeight="640.0" prefWidth="480.0" style="-fx-background-color: #424242;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
     <VBox maxHeight="1.7976931348623157E308">
-        <Label maxWidth="1.7976931348623157E308" text="Productos" VBox.vgrow="ALWAYS">
+        <Label maxWidth="1.7976931348623157E308" text="Productos" textFill="WHITE" VBox.vgrow="ALWAYS">
             <padding>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </padding>
@@ -18,7 +18,7 @@
       <TabPane fx:id="productsPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS" />
     </VBox>
     <VBox maxHeight="1.7976931348623157E308" maxWidth="350.0" prefWidth="250.0">
-        <Label maxWidth="1.7976931348623157E308" text="Factura Simplificada" VBox.vgrow="ALWAYS">
+        <Label maxWidth="1.7976931348623157E308" text="Factura Simplificada" textFill="WHITE" VBox.vgrow="ALWAYS">
             <padding>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </padding>
@@ -26,10 +26,10 @@
                 <Font size="15.0" />
             </font>
         </Label>
-        <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="products-container" VBox.vgrow="ALWAYS">
-            <ListView fx:id="tableBillListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+        <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #424242;" styleClass="products-container" VBox.vgrow="ALWAYS">
+            <ListView fx:id="tableBillListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #424242;" />
         </ScrollPane>
-        <Label fx:id="totalText" maxWidth="1.7976931348623157E308" text="Total: 0 €" VBox.vgrow="ALWAYS">
+        <Label fx:id="totalText" maxWidth="1.7976931348623157E308" style="-fx-background-color: #424242;" text="Total: 0 €" textFill="WHITE" VBox.vgrow="ALWAYS">
             <padding>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </padding>
@@ -37,20 +37,20 @@
                 <Font size="15.0" />
             </font>
         </Label>
-        <HBox alignment="CENTER">
-            <Button mnemonicParsing="false" onAction="#clearTable" text="Limpiar">
+        <HBox alignment="CENTER" style="-fx-background-color: #424242;">
+            <Button mnemonicParsing="false" onAction="#clearTable" style="-fx-background-color: #D57575;" text="Limpiar">
                 <HBox.margin>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#payBill" text="Pagado">
+            <Button mnemonicParsing="false" onAction="#payBill" style="-fx-background-color: #8ED575;" text="Pagado">
                 <HBox.margin>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#printBill" text="Factura">
+            <Button mnemonicParsing="false" onAction="#printBill" style="-fx-background-color: #7591D5;" text="Factura">
                 <HBox.margin>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </HBox.margin>
             </Button>
         </HBox>

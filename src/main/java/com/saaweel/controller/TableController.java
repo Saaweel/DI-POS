@@ -28,20 +28,20 @@ public class TableController {
     }
 
     public void initialize() {
-        // Temporary list of products
         // Array de productos que contenga el menu (Nombre, Precio, URL de la imagen, Categoría)
         String[][] products = {
-                {"Coca Cola", "2.50", "https://i.imgur.com/UI9K44h.jpeg", "Bebidas"},
-                {"Patatas", "3.50", "https://i.imgur.com/UI9K44h.jpeg", "Entrantes"},
-                {"Hamburguesa", "5.50", "https://i.imgur.com/UI9K44h.jpeg", "Comida rápida"},
-                {"Pizza", "7.50", "https://i.imgur.com/UI9K44h.jpeg", "Comida rápida"},
-                {"Helado", "4.50", "https://i.imgur.com/UI9K44h.jpeg", "Postres"},
-                {"Tarta", "5.50", "https://i.imgur.com/UI9K44h.jpeg", "Postres"},
-                {"Cerveza", "3.50", "https://i.imgur.com/UI9K44h.jpeg", "Bebidas alcohólicas"},
-                {"Vino", "5.50", "https://i.imgur.com/UI9K44h.jpeg", "Bebidas alcohólicas"},
-                {"Café", "2.50", "https://i.imgur.com/UI9K44h.jpeg", "Bebidas"},
-                {"Té", "2.50", "https://i.imgur.com/UI9K44h.jpeg", "Bebidas"},
-                {"Agua", "1.50", "https://i.imgur.com/UI9K44h.jpeg", "Bebidas"}
+                {"Coca Cola", "2.50", "https://i.imgur.com/XAFkgry.png", "Bebidas"},
+                {"Patatas", "3.50", "https://i.imgur.com/F70Iuoq.png", "Entrantes"},
+                {"Hamburguesa", "5.50", "https://i.imgur.com/OIuTFdq.png", "Comida rápida"},
+                {"Pizza", "7.50", "https://i.imgur.com/dugo045.png", "Comida rápida"},
+                {"Helado", "4.50", "https://i.imgur.com/Ue5HZ3N.png", "Postres"},
+                {"Tarta", "5.50", "https://i.imgur.com/zoFpvmT.png", "Postres"},
+                {"Cerveza", "3.50", "https://i.imgur.com/Y1lwEVJ.png", "Bebidas alcohólicas"},
+                {"Vino", "5.50", "https://i.imgur.com/Sd8aFG6.png", "Bebidas alcohólicas"},
+                {"Café", "2.50", "https://i.imgur.com/jZqBKjj.png", "Bebidas"},
+                {"Té", "2.50", "https://i.imgur.com/GQC9OgF.png", "Bebidas"},
+                {"Agua", "1.50", "https://i.imgur.com/jagDrg7.png", "Bebidas"},
+                {"Aquarius", "2.50", "https://i.imgur.com/F03p1iT.png", "Bebidas"}
         };
 
         for (String[] product : products) {
@@ -80,7 +80,9 @@ public class TableController {
 
         tableBillListView.setItems(this.table.getProducts());
         tableBillListView.setCellFactory(listView -> new ProductCellFactory(this.table));
-        tableBillListView.setPlaceholder(new Label("No hay productos en la mesa"));
+        Label placeholder = new Label("No hay productos en la mesa");
+        placeholder.setStyle("-fx-text-fill: white;");
+        tableBillListView.setPlaceholder(placeholder);
 
         this.table.getProducts().addListener((ListChangeListener<Product>) c -> totalText.setText("Total: " + table.getBilling() + " €"));
 

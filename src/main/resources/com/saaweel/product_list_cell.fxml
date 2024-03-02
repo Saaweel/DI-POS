@@ -6,21 +6,24 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox alignment="CENTER_LEFT" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saaweel.controller.ProductController">
+<HBox alignment="CENTER_LEFT" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saaweel.controller.ProductController">
     <ImageView fx:id="productImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
       <HBox.margin>
          <Insets right="15.0" />
       </HBox.margin></ImageView>
     <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
-        <Label fx:id="name" style="-fx-text-fill: black;" text="Producto" VBox.vgrow="ALWAYS">
+        <Label fx:id="name" style="-fx-text-fill: white;" text="Producto" textFill="WHITE" VBox.vgrow="ALWAYS">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-        <Label fx:id="description" style="-fx-text-fill: black;" text="1 x 3.8 € = 3.8 €" VBox.vgrow="ALWAYS" />
+        <Label fx:id="description" style="-fx-text-fill: white;" text="1 x 3.8 € = 3.8 €" VBox.vgrow="ALWAYS" />
     </VBox>
-   <Button mnemonicParsing="false" onAction="#removeProduct" prefHeight="40.0" prefWidth="40.0" text="-">
+   <Button mnemonicParsing="false" onAction="#removeProduct" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #D57575;" text="-">
       <HBox.margin>
          <Insets left="5.0" />
       </HBox.margin>
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
    </Button>
 </HBox>

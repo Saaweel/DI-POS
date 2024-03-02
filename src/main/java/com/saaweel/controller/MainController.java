@@ -6,8 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,12 +29,14 @@ public class MainController {
     }
 
     public void addTable(Table table) {
-        Rectangle tableButton = (Rectangle) root.lookup("#table" + table.getNumber());
+        ImageView tableButton = (ImageView) root.lookup("#table" + table.getNumber());
+
+        String tableType = tableButton.getImage().getUrl().contains("large") ? "table-large" : "table";
 
         if (table.isOccupied()) {
-            tableButton.setStyle("-fx-fill: #e98784");
+            tableButton.setImage(new Image(Objects.requireNonNull(App.class.getResourceAsStream(tableType + "-occupied.png"))));
         } else {
-            tableButton.setStyle("-fx-fill: #a8e984");
+            tableButton.setImage(new Image(Objects.requireNonNull(App.class.getResourceAsStream(tableType + ".png"))));
         }
 
         tableButton.onMouseClickedProperty().set(event -> {
@@ -48,25 +50,27 @@ public class MainController {
         Label tableLabel = (Label) root.lookup("#tableLabel" + table.getNumber());
 
         if (tableLabel != null) {
-            tableLabel.setText("Mesa " + table.getNumber() + "\n" + "Cuenta: " + table.getBilling() + " €");
+            tableLabel.setText("Mesa " + table.getNumber() + "\n" + table.getBilling() + " €");
         }
 
         tables.add(table);
     }
 
     public void updateTableButton(Table table) {
-        Rectangle tableButton = (Rectangle) root.lookup("#table" + table.getNumber());
+        ImageView tableButton = (ImageView) root.lookup("#table" + table.getNumber());
+
+        String tableType = tableButton.getStyleClass().contains("large") ? "table-large" : "table";
 
         if (table.isOccupied()) {
-            tableButton.setStyle("-fx-fill: #e98784");
+            tableButton.setImage(new Image(Objects.requireNonNull(App.class.getResourceAsStream(tableType + "-occupied.png"))));
         } else {
-            tableButton.setStyle("-fx-fill: #a8e984");
+            tableButton.setImage(new Image(Objects.requireNonNull(App.class.getResourceAsStream(tableType + ".png"))));
         }
 
         Label tableLabel = (Label) root.lookup("#tableLabel" + table.getNumber());
 
         if (tableLabel != null) {
-            tableLabel.setText("Mesa " + table.getNumber() + "\n" + "Cuenta: " + table.getBilling() + " €");
+            tableLabel.setText("Mesa " + table.getNumber() + "\n" + table.getBilling() + " €");
         }
     }
 

@@ -1,18 +1,52 @@
-.table-button {
-    -fx-text-fill: white;
-    -fx-font-size: 1.5em;
-    -fx-font-weight: bold;
-    -fx-alignment: center;
-
-    -fx-max-width: Infinity;
-    -fx-max-height: Infinity;
-    -fx-min-width: 150;
-    -fx-min-height: 150;
-
-    -fx-background-radius: 5;
-    -fx-border-radius: 5;
+.table-button:hover, .table-button-large:hover {
+    -fx-opacity: 0.8;
 }
 
-.table-button:hover {
-    -fx-opacity: 0.8;
+.scroll-bar:vertical .track {
+    -fx-background-color: #424242;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #565656;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: #424242;
+    -fx-background-insets: 0;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #424242;
+}
+
+.tab-pane .tab {
+   -fx-background-color: #565656;
+   -fx-background-insets: 0 1 0 1, 0, 0;
+}
+
+.tab-pane .tab:selected {
+   -fx-background-color: #424242;
+}
+
+.tab {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.416667em 0.166667em 0.0em 0.0em; /* overridden as 5 2 0 0 */
 }
