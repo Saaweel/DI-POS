@@ -1,5 +1,6 @@
 package com.saaweel.controller;
 
+import com.saaweel.App;
 import com.saaweel.cell.ProductCellFactory;
 import com.saaweel.model.DataBase;
 import com.saaweel.model.Product;
@@ -13,6 +14,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
+
+import java.io.InputStream;
+import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TableController {
     private Table table;
@@ -113,5 +121,19 @@ public class TableController {
 
     public void printBill() {
         System.out.println("Imprimiendo factura con id " + this.table.getId());
+
+        try {
+            InputStream reportFile = App.class.getResourceAsStream("bill.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(reportFile);
+
+            Map<String, Object> parameters = new HashMap<>();
+            parameters.put("table_id", this.table.getId());
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, DataBase.getConnection());
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
     }
 }

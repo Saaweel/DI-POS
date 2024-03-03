@@ -131,4 +131,8 @@ public class DataBase {
             throw new RuntimeException(e);
         }
     }
+
+    public static Connection getConnection() {
+        return connection;
+    }
 }
