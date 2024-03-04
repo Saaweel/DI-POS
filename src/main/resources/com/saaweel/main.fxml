@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox alignment="CENTER" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #424242;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saaweel.controller.MainController">
-    <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" HBox.hgrow="NEVER">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #424242;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saaweel.controller.MainController">
+   <Button mnemonicParsing="false" onAction="#generateHistory" style="-fx-background-color: white;" text="Generar histórico de mesas">
+      <VBox.margin>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </VBox.margin>
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </padding>
+   </Button>
+    <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" VBox.vgrow="NEVER">
         <ImageView fitHeight="500.0" fitWidth="800.0" mouseTransparent="true" pickOnBounds="true">
             <Image url="@floor.jpg" />
         </ImageView>
@@ -67,4 +76,4 @@
             </font>
         </Label>
     </AnchorPane>
-</HBox>
+</VBox>

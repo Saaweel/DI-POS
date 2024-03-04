@@ -3,8 +3,10 @@ Aplicación del punto de venta (POS) de un bar como proyecto final del módulo D
 
 # Changelog
 
+- ### Version 0.1.1 (04/03/2024)
+  - *Botón* para exportar el historial de mesas usando JasperReport
 - ### Version 0.0.9 (03/03/2024)
-  - Export bill to JasperReport
+  - Exportar las facturas usando JasperReport
 - ### Version 0.0.8 (02/03/2024)
   - Refront completo
 - ### Version 0.0.7 (02/03/2024)

@@ -1,6 +1,7 @@
 package com.saaweel.controller;
 
 import com.saaweel.App;
+import com.saaweel.model.DataBase;
 import com.saaweel.model.Table;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,11 +10,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.io.InputStream;
+import java.util.*;
 
 public class MainController {
     public AnchorPane root ;
@@ -106,6 +108,23 @@ public class MainController {
 
                 this.updateTableButton(table);
             });
+        }
+    }
+
+    public void generateHistory() {
+        System.out.println("Generando el historial de mesas");
+
+        try {
+            InputStream reportFile = App.class.getResourceAsStream("history.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(reportFile);
+
+            Map<String, Object> parameters = new HashMap<>();
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, DataBase.getConnection());
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException e) {
+            e.printStackTrace();
         }
     }
 }
