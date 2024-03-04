@@ -45,9 +45,7 @@ YmMyM2Q7]]>
 	</style>
 	<subDataset name="tableDataset" uuid="db71c593-027d-4708-bc9a-984770dd86d7">
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Bill Adapter"/>
-		<parameter name="table_id" class="java.lang.Integer">
-			<defaultValueExpression><![CDATA[55]]></defaultValueExpression>
-		</parameter>
+		<parameter name="table_id" class="java.lang.Integer" />
 		<queryString language="SQL">
 			<![CDATA[SELECT 
 			    amount,
@@ -88,6 +86,7 @@ YmMyM2Q7]]>
 			<property name="com.jaspersoft.studio.field.label" value="total"/>
 		</field>
 	</subDataset>
+	<parameter name="table_id" class="java.lang.Integer" />
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -116,6 +115,9 @@ YmMyM2Q7]]>
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="tableDataset" uuid="91912241-efe2-4172-a17d-4a9a926b8de6">
+					    <datasetParameter name="table_id">
+							<datasetParameterExpression><![CDATA[$P{table_id}]]></datasetParameterExpression>
+						</datasetParameter>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
 					<jr:columnGroup width="552" uuid="13d66349-47a0-4e50-9c63-d6e77886e89c">
