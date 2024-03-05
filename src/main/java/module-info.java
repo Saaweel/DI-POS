@@ -3,6 +3,7 @@ module com.saaweel {
     requires javafx.fxml;
     requires jasperreports;
     requires java.sql;
+    requires org.slf4j;
 
     opens com.saaweel to javafx.fxml;
     exports com.saaweel;
