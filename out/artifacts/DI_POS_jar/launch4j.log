@@ -1,0 +1,22 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\Saúl Díaz\OneDrive\Escritorio\DI-POS\out\artifacts\DI_POS_jar\DI-POS.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\Saúl Díaz\OneDrive\Escritorio\DI-POS\out\artifacts\DI_POS_jar\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Python\Python310\Scripts\;C:\Python\Python310\;C:\Program Files\Microsoft\jdk-17.0.5.8-hotspot\bin;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.8.6\bin;C:\Program Files\nodejs\;C:\Users\Saúl Díaz\AppData\Local\Microsoft\WindowsApps;C:\Users\Saúl Díaz\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Saúl Díaz\AppData\Local\GitHubDesktop\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.2\bin;;C:\Program Files\JetBrains\PyCharm Community Edition 2023.2.2\bin;;C:\Users\Saúl Díaz\AppData\Roaming\npm;C:\Program Files\Microsoft\jdk-17.0.5.8-hotspot\bin
+JRE paths:	;C:\Python\Python310\Scripts\;C:\Python\Python310\;C:\Program Files\Microsoft\jdk-17.0.5.8-hotspot\bin;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.8.6\bin;C:\Program Files\nodejs\;C:\Users\Saúl Díaz\AppData\Local\Microsoft\WindowsApps;C:\Users\Saúl Díaz\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Saúl Díaz\AppData\Local\GitHubDesktop\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.2\bin;;C:\Program Files\JetBrains\PyCharm Community Edition 2023.2.2\bin;;C:\Users\Saúl Díaz\AppData\Roaming\npm;C:\Program Files\Microsoft\jdk-17.0.5.8-hotspot\bin
+Check launcher:	C:\Python\Python310\Scripts\bin\javaw.exe (not found)
+Check launcher:	C:\Python\Python310\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Microsoft\jdk-17.0.5.8-hotspot\bin\javaw.exe (OK)
+Version string: 1.017.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Microsoft\jdk-17.0.5.8-hotspot\bin\javaw.exe
+Launcher args:	-jar "C:\Users\Saúl Díaz\OneDrive\Escritorio\DI-POS\out\artifacts\DI_POS_jar\DI-POS.exe"
+Args length:	88/32768 chars
+Exit code:	0

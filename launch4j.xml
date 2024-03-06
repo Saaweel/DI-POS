@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\Users\Saúl Díaz\OneDrive\Escritorio\DI-POS\out\artifacts\DI_POS_jar\DI-POS.jar</jar>
-  <outfile>C:\Users\Saúl Díaz\OneDrive\Escritorio\DI-POS\DI-POS.exe</outfile>
+  <outfile>C:\Users\Saúl Díaz\OneDrive\Escritorio\DI-POS\out\artifacts\DI_POS_jar\DI-POS.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
